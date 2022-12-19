@@ -24,8 +24,10 @@ function main()
     rfc = @p CSV.File("rfc.csv") |> map((_.name, _.flux, coords=(_.ra, _.dec)))
 
     @info "Computing simulations"
+    # put "additional error" magnitudes here, in degrees:
     computed = map([0, 0.45]) do add°
         real_avg = average_flux_nearby(events, rfc, add°)
+        # set number of MC simulations here:
         rand_avgs = ThreadsX.map(1:5*10^4) do _
             average_flux_nearby(randomize(events), rfc, add°)
         end
