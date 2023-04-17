@@ -6,9 +6,9 @@ How to reproduce p-values:
 ```julia
 ┌ Info: 
 │   c.add° = 0.0
-└   p = 0.016979660406791865
+└   p = 0.0164
 ┌ Info: 
 │   c.add° = 0.45
-└   p = 5.999880002399952e-5
+└   p = 3.4e-5
 ```
 The obtained p-values should be in agreement with the black line in Figure 2 of https://arxiv.org/abs/2211.09631.
